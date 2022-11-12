@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    font-size: 16px;
+    --typo-prim: Helvetica, Arial, sans-serif;
+    --typo-secon: 'Spectral', georgia, serif;
+    --shadow-1: 0px 1px 1px #0000001a;
+    --shadow-2: 0px 0px 3px #fea;
+    --bg-dark: hsl(0, 0%, 20%);
+    --bg-grey: hsl(0, 0%, 93%);
+    --cl-prim-1: hsl(43, 100%, 53%);
+    --cl-prim-1_hover: hsl(43, 100%, 65%);
+    --cl-prim-2: hsl(36, 98%, 23%);
+    --cl-dark-2:  hsl(0, 0%, 40%);
+    --cl-grey-2:  hsl(0, 0%, 87%);
+    --cl-grey-3:  hsl(0, 0%, 85%);
+    --cl-white-1:  hsl(0, 0%, 95%);
+    --cl-msg-error: hsl(9, 100%, 53%);
+}
+
+body {
+    color: #333;
+    font-family: var(--typo-prim);
+    margin-top: 4rem;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#root {
+    width: 100%;
+}
+
+ul, li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button, input {
+    font-size: 1rem;
+    display: block;
+    font-family: var(--typo-prim);
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: var(--bg-dark);
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+    flex: 1;
+}
+
+.container {
+    max-width: 50rem;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.main_container {
+    margin-top: 4rem;
+}
+
+.title {
+    font-family: var(--typo-secon);
+    line-height: 1;
+    font-size: 3rem;
+    margin: 1rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--cl-prim-1);
+    position: absolute;
+    bottom: 5px;
+    left: -5px;
+    border-radius: .2rem;
+    z-index: -1;
+}
+
+.animateLef {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+    animation: animeLeft .3s forwards;
+}
+
+.error-component {
+    color: var(--cl-msg-error);
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.VictoryContainer {
+    height: initial !important;
+}
+
+@keyframes animeLeft {
+    to { 
+        opacity: 1;
+        transform: initial;
+    }
+}

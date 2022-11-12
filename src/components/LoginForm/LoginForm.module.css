@@ -1,0 +1,52 @@
+.form {
+    margin-bottom: 2rem;
+}
+
+.lost {
+    display: inline-block;
+    color: var(--cl-dark-2);
+    padding: .5rem 0;
+    line-height: 1;
+    transition: all ease .3s;
+}
+
+.lost::after {
+    content: '';
+    margin-top: 2px;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    display: block;
+    transition: all ease .4s;
+}
+
+.lost:hover {
+    color: var(--cl-prim-1);
+}
+
+.lost:hover::after {
+    transform: scale(0);
+}
+
+.sign_up {
+    margin: 4rem 0;
+}
+
+.sign_up p {
+    margin: 2rem 0;
+}
+
+.subtitle {
+    font-family: var(--typo-second);
+    line-height: 1;
+    font-size: 2rem;
+}
+
+.subtitle::after {
+    content: '';
+    display: block;
+    background: var(--cl-grey-2);
+    height: .5rem;
+    width: 3rem;
+    border-radius: .2rem;
+}

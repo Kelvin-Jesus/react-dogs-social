@@ -1,0 +1,34 @@
+.input_wrapper {
+    margin-bottom: 1rem;
+}
+
+.input_label {
+    display: block;
+    font-size: 1rem;
+    line-height: 1;
+    padding-bottom: .5rem;
+}
+
+.input {
+    border: 1px solid #eee;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: .8rem;
+    border-radius: .4rem;
+    background: #eee;
+    transition: .2s;
+}
+
+.input:hover, .input:focus {
+    outline: none;
+    border-color: var(--cl-prim-1);
+    background: #fff;
+    box-shadow: var(--shadow-2);
+}
+
+.input_error {
+    color: var(--cl-msg-error);
+    font-size: .875rem;
+    margin-top: .25rem;
+}

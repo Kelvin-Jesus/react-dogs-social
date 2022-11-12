@@ -1,0 +1,125 @@
+.nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.nav a, 
+.nav button {
+    background: var(--bg-grey);
+    border-radius: .2rem;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.nav a:hover, 
+.nav a:focus, 
+.nav button:hover,
+.nav button:focus {
+    background: transparent;
+    box-shadow: 0 0 0 3px var(--cl-grey-2);
+    border-color: var(--bg-dark);
+    outline: none;
+}
+
+.nav a:global(.active) {
+    background-color: transparent;
+    box-shadow: var(--shadow-2);
+    border-color: var(--cl-prim-1);
+}
+
+.nav a:global(.active) svg * {
+    fill: var(--cl-prim-1);
+}
+
+.mobile_btn {
+    background: var(--bg-grey);
+    padding: 0;
+    border-radius: .2rem;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.mobile_btn::after {
+    content: '';
+    display: block;
+    width: 1.2rem;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 6px currentColor, 0 -6px currentColor;
+    transition: .2s;
+}
+
+.mobile_btn:focus, 
+.mobile_btn:hover,
+.mobile_btn_active {
+    outline: none;
+    background: var(--cl-white-1);
+    box-shadow: var(--shadow-2);
+    border-color: var(--cl-prim-1);
+    color: var(--cl-prim-1);
+}
+
+.mobile_btn_active::after {
+    transform: rotate(-90deg);
+    width: 4px;
+    height: 4px;
+    box-shadow: 0 8px currentColor, 0 -8px currentColor;
+}
+
+.nav_mobile {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    padding: 0 1rem;
+    background: var(--cl-white-1);
+    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.2);
+    border-radius: .2rem;
+    transform: translateX(-10px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav_mobile a,
+.nav_mobile button {
+    display: flex;
+    align-items: center;
+    background: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--cl-grey-2);
+    padding: .5rem 0;
+    cursor: pointer;
+}
+
+.nav_mobile a:hover svg > *,
+.nav_mobile button:hover svg > * {
+    transition: .2s;
+    fill: var(--cl-prim-1);
+}
+
+.nav_mobile button {
+    border-bottom: none;
+}
+
+.nav_mobile svg {
+    margin-right: .5rem;
+}
+
+.nav_mobile_active {
+    opacity: 1;
+    pointer-events: painted;
+}

@@ -1,0 +1,87 @@
+.formComment {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 .5rem .5rem;
+}
+
+.formComment.single {
+    padding: 0;
+}
+
+.commentContainer {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+        "textarea button"
+        "error    error";
+}
+
+.formComment.single .commentContainer {
+    grid-template-areas: 
+        "textarea textarea textarea button"
+        "error    error    error    error";
+}
+
+.commentTextArea {
+    grid-area: textarea;
+    resize: none;
+    width: 100%;
+    display: block;
+    font-size: 1rem;
+    margin-top: .5rem;
+    font-family: var(--typo-secon);
+    border: 1px solid #eee;
+    padding: .5rem;
+    border-radius: .5rem;
+    background: hsl(0, 0%, 90%);
+    transition: .3s;
+}
+
+.commentTextArea:focus,
+.commentTextArea:hover {
+    outline: none;
+    border-color: var(--cl-prim-1);
+    background: #fbfbfb;
+    box-shadow: 0 0 0 3px var(--cl-prim-1_hover);
+}
+
+.button {
+    grid-area: button;
+    border: none;
+    cursor: pointer;
+    color: var(--bg-dark);
+    background: transparent;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    overflow: hidden;
+}
+
+.formComment.single .button {
+    
+}
+
+.button:focus,
+.button:active {
+    outline: none;
+}
+
+.button:focus svg g,
+.button:hover svg g {
+    animation: bark .4s infinite alternate both;
+}
+
+.button:focus svg path,
+.button:hover svg path {
+    fill: var(--cl-prim-1_hover);
+    stroke: var(--cl-prim-1);
+}
+
+.commentContainer .error-component {
+    grid-area: error;
+}
+
+@keyframes bark {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

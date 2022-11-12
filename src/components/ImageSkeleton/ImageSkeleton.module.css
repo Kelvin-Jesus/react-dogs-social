@@ -1,0 +1,28 @@
+.wrapper {
+    display: grid;
+}
+
+.img {
+    grid-area: 1/1;
+    height: 100%;
+    opacity: 0;
+    transition: 150ms;
+}
+
+.skeleton {
+    grid-area: 1/1;
+    height: 100%;
+    background-image: linear-gradient(90deg, var(--cl-grey-3) 0%, var(--cl-white-1) 50%, var(--cl-grey-3) 100%);
+    background-color: var(--cl-grey-3);
+    background-size: 200%;
+    animation: skeleton 1.5s infinite linear;
+}
+
+@keyframes skeleton {
+    from {
+        background-position: 0px;
+    }
+    to {
+        background-position: -200%;
+    }
+}
